@@ -38,19 +38,9 @@ public class AppointmentController {
 		return ResponseEntity.ok(apptServ.getApptById(id));
 	}
 	
-	@GetMapping("/doctor/{id}")
-	public ResponseEntity<List<Appointment>> getApptsByDoctorId (@PathVariable int id) {
-		return ResponseEntity.ok(apptServ.getApptsByDoctorId(id));
-	}
-	
-	@GetMapping("/cust/{id}")
-	public ResponseEntity<List<Appointment>> getApptsByAppointmentCustomer (@PathVariable int id) {
-		return ResponseEntity.ok(apptServ.getApptsByAppointmentCustomer(id));
-	}
-	
-	@GetMapping("/pet/{id}")
-	public ResponseEntity<List<Appointment>> getApptsByPetId (@PathVariable int id) {
-		return ResponseEntity.ok(apptServ.getApptsByPetId(id));
+	@GetMapping("/visit/{id}")
+	public ResponseEntity<Appointment> getApptByVisitId (@PathVariable int id) {
+		return ResponseEntity.ok(apptServ.getApptByVisitId(id));
 	}
 	
 	@PutMapping("/{id}")

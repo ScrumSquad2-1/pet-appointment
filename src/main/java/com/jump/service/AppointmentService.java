@@ -26,16 +26,8 @@ public class AppointmentService {
 				.orElseThrow(AppointmentNotFoundException::new);
 	}
 	
-	public List<Appointment> getApptsByDoctorId(int doctorId) {
-		return apptRepo.findByDoctorId(doctorId);
-	}
-	
-	public List<Appointment> getApptsByAppointmentCustomer(int appointmentCustomer) {
-		return apptRepo.findByAppointmentCustomer(appointmentCustomer);
-	}
-	
-	public List<Appointment> getApptsByPetId(int petId) {
-		return apptRepo.findByPetId(petId);
+	public Appointment getApptByVisitId(int id) {
+		return apptRepo.findByVisitId(id);
 	}
 	
 	public Appointment addAppt(@Valid Appointment appt) {

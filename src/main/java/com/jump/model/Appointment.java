@@ -18,15 +18,21 @@ public class Appointment {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int appointmentId;
-	private int doctorId;
-	private int appointmentCustomer;
-	private int petId;
 	
-	public Appointment(int doctorId, int appointmentCustomer, int petId) {
+	private int visitId;
+	
+	private boolean completed;
+	private boolean paid;
+	private boolean cancelled;
+	private String notes;
+	
+	public Appointment(int visitId) {
 		super();
-		this.doctorId = doctorId;
-		this.appointmentCustomer = appointmentCustomer;
-		this.petId = petId;
+		this.visitId = visitId;
+		this.completed = false;
+		this.paid = false;
+		this.cancelled = false;
+		this.notes = "";
 	}
 	
 }
