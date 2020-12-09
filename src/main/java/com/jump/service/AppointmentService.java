@@ -5,12 +5,14 @@ import java.util.List;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.stereotype.Service;
 
 import com.jump.repository.AppointmentRepository;
 import com.jump.exception.AppointmentNotFoundException;
 import com.jump.model.Appointment;
 
+@FeignClient(name = "pet-appointment")
 @Service
 public class AppointmentService {
 	
