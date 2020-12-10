@@ -24,12 +24,12 @@ public class AppointmentServiceApplication implements CommandLineRunner {
 	public void run(String... args) throws Exception {
 		// initialize db with test entries for frontend testing
 		
-		apptRepo.save(new Appointment(1));
-		apptRepo.save(new Appointment(2));
-		apptRepo.save(new Appointment(3));
-		apptRepo.save(new Appointment(4));
-		apptRepo.save(new Appointment(5));
-		apptRepo.save(new Appointment(6));
+		apptRepo.save(new Appointment(7));
+		apptRepo.save(new Appointment(8));
+		apptRepo.save(new Appointment(9));
+		apptRepo.save(new Appointment(10));
+		apptRepo.save(new Appointment(11));
+		apptRepo.save(new Appointment(12));
 		
 	}
 	
