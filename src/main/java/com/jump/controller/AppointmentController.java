@@ -22,7 +22,7 @@ import com.jump.model.Appointment;
 import com.jump.service.AppointmentService;
 
 @RestController
-@RequestMapping("appt")
+//@RequestMapping("appt")
 public class AppointmentController {
 
 	@Autowired
