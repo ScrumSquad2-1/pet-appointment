@@ -5,11 +5,13 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
+import org.springframework.cloud.openfeign.EnableFeignClients;
 
 import com.jump.model.Appointment;
 import com.jump.repository.AppointmentRepository;
 
 @EnableEurekaClient
+@EnableFeignClients
 @SpringBootApplication
 public class AppointmentServiceApplication implements CommandLineRunner {
 

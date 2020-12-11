@@ -12,7 +12,6 @@ import com.jump.repository.AppointmentRepository;
 import com.jump.exception.AppointmentNotFoundException;
 import com.jump.model.Appointment;
 
-@FeignClient(name = "pet-appointment")
 @Service
 public class AppointmentService {
 	
