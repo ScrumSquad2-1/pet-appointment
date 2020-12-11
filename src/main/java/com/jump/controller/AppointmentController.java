@@ -20,6 +20,7 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import com.jump.exception.AppointmentIdMismatchException;
 import com.jump.model.Appointment;
 import com.jump.service.AppointmentService;
+import com.jump.service.VisitService;
 
 @RestController
 //@RequestMapping("appt")
@@ -28,19 +29,32 @@ public class AppointmentController {
 	@Autowired
 	AppointmentService apptServ;
 	
+	@Autowired
+	VisitService visitServ;
+	
 	@GetMapping
 	public ResponseEntity<List<Appointment>> getAppts() {
-		return ResponseEntity.ok(apptServ.getAllAppts());
+		List<Appointment> appts = apptServ.getAllAppts();
+		
+		for (Appointment a : appts) {
+			a.setVisit(visitServ.getVisitById(a.getAppointmentId()));
+		}
+		
+		return ResponseEntity.ok(appts);
 	}
 	
 	@GetMapping("/{id}")
 	public ResponseEntity<Appointment> getApptById (@PathVariable int id) {
-		return ResponseEntity.ok(apptServ.getApptById(id));
+		Appointment a = apptServ.getApptById(id);
+		a.setVisit(visitServ.getVisitById(a.getAppointmentId()));
+		return ResponseEntity.ok(a);
 	}
 	
 	@GetMapping("/visit/{id}")
 	public ResponseEntity<Appointment> getApptByVisitId (@PathVariable int id) {
-		return ResponseEntity.ok(apptServ.getApptByVisitId(id));
+		Appointment a = apptServ.getApptByVisitId(id);
+		a.setVisit(visitServ.getVisitById(a.getAppointmentId()));
+		return ResponseEntity.ok(a);
 	}
 	
 	@PutMapping("/{id}")
