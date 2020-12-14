@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 import com.jump.model.Visit;
 
-@FeignClient(name = "petvisit-microservice")
+@FeignClient(name = "pet-visit")
 @Service
 public interface VisitService {
 	
